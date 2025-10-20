@@ -7,7 +7,7 @@ import ma.fstt.atelier_2.entities.Internaute;
 import ma.fstt.atelier_2.entities.Panier;
 import ma.fstt.atelier_2.entities.Produit;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -87,7 +87,7 @@ public class PrincipalServlet extends HttpServlet {
         }
     }
 
-    // Méthodes pour les actions GET
+    // ========== MÉTHODES GET ==========
 
     private void afficherVitrine(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -128,7 +128,7 @@ public class PrincipalServlet extends HttpServlet {
         response.sendRedirect("index.jsp");
     }
 
-    // Méthodes pour les actions POST
+    // ========== MÉTHODES POST ==========
 
     private void login(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
@@ -229,8 +229,7 @@ public class PrincipalServlet extends HttpServlet {
         Panier panier = panierDAO.findByInternauteId(internauteId);
 
         if (panier != null && !panier.getLignes().isEmpty()) {
-            // Ici vous pouvez créer une entité Commande
-            // Pour l'instant, on vide juste le panier
+            // Vider le panier après validation
             panierDAO.viderPanier(panier.getId());
 
             request.setAttribute("message", "Commande validée avec succès!");

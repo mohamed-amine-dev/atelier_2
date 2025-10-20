@@ -1,6 +1,6 @@
 package ma.fstt.atelier_2.entities;
 
-import javax.persistence.*;  // ✅ JAVAX
+import jakarta.persistence.*;  // ✅ JAVAX
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;

@@ -1,21 +1,17 @@
 package ma.fstt.atelier_2.dao;
 
-
 import ma.fstt.atelier_2.entities.Internaute;
-
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.NoResultException;
-import jakarta.transaction.Transactional;
 import java.util.List;
 
-@ApplicationScoped
+@ApplicationScoped  // ✅
 public class InternauteDAO implements GenericDAO<Internaute> {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "ecommercePU")  // ✅
     private EntityManager em;
-
     @Override
     public void save(Internaute internaute) {
         em.persist(internaute);

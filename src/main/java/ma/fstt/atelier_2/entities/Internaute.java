@@ -1,6 +1,6 @@
 package ma.fstt.atelier_2.entities;
 
-import javax.persistence.*;  // ✅ JAVAX
+import jakarta.persistence.*;  // ✅ JAVAX
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

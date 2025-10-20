@@ -1,21 +1,21 @@
 package ma.fstt.atelier_2.dao;
 
-import ma.fstt.atelier_2.entities.Panier;
 import ma.fstt.atelier_2.entities.Internaute;
 import ma.fstt.atelier_2.entities.LignePanier;
-import ma.fstt.atelier_2.entities.Produit;
-
+import ma.fstt.atelier_2.entities.Panier;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.NoResultException;
+import ma.fstt.atelier_2.entities.Produit;
+
 import java.util.Date;
 import java.util.List;
 
-@ApplicationScoped
+@ApplicationScoped  // ✅
 public class PanierDAO implements GenericDAO<Panier> {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "ecommercePU")  // ✅
     private EntityManager em;
 
     @Override
